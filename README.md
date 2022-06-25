@@ -3,7 +3,7 @@
 ## Mail : nurulyakin79@gmail.com
 ### Sebuah Web Server menggunakan Nginx, PHP, dan MySQl di tambah dengan phpMyAdmin.
 ### Dibuat Di VPS dengan Linux Ubuntu 20.04
-### [Klik Disini untuk Melihat](www.islamyakin.live/)
+### Klik [Disini](http://www.islamyakin.live/) untuk Melihat Web.
 ```
 PHP version 8.1.7
 ```
@@ -30,4 +30,4 @@ Lanjutan Variable
 
 
 
-made with ❤️ by [Islam Nurul Yakin](islamyakin.github.io)
+made with ❤️ by [Islam Nurul Yakin](https://islamyakin.github.io)
