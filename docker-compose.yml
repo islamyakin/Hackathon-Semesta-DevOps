@@ -1,0 +1,46 @@
+version: '2.3'
+services:
+ # Nginx server configuration   
+  web:
+    image: nginx:latest
+    container_name: webserver_semesta
+    links:
+      - mysql
+      - php
+    volumes:
+      - ./content:/var/www/html
+      - ./nginx:/etc/nginx/conf.d/
+    ports:
+      - "80:80"
+ # Php-fpm configuration
+  php:
+    image: php:8.1-fpm
+    container_name: php_semesta
+    volumes:
+      - ./content:/var/www/html
+      - ./php:/usr/local/etc/php/php.ini
+ # Mysql configuration
+  mysql:
+    image: mysql:latest
+    container_name: mysql_semesta
+    restart: always
+    environment:
+        - MYSQL_DATABASE=semesta
+        - MYSQL_ROOT_PASSWORD=islam
+        - MYSQL_USER=islam
+        - MYSQL_PASSWORD=islam321
+    ports:
+        - "3306:3306"
+    volumes:
+        - /dbdata:/var/lib/mysql
+  #PhpmyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+        - "8090:80"
+    links: 
+        - mysql:db
+volumes:
+  dbdata:
