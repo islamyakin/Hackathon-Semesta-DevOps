@@ -61,5 +61,5 @@ networks:
             config:
                - subnet: 172.29.0.0/28
 volumes:
-    dbdata:
+    dbdata: 
 
