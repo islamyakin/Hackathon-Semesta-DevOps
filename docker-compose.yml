@@ -1,6 +1,6 @@
 version: '2.4'
 services:
- # Nginx server configuration   
+ # Konfig untuk NGINX
   web:
     build:
       dockerfile: ./nginx/Dockerfile
@@ -14,7 +14,7 @@ services:
         ipv4_address: 172.29.0.2
     ports:
       - "80:80"
- # Php-fpm configuration
+ # Konfig untuk PHP dan ENV PHP
   php:
     build:
       dockerfile: ./php/Dockerfile
@@ -28,7 +28,7 @@ services:
         ipv4_address: 172.29.0.3  
     volumes:
       - ./:/app
- # Mysql configuration
+ # Konfigurasi Database MySQL
   mysql:
     build: 
       context: ./mysql
@@ -61,5 +61,4 @@ networks:
             config:
                - subnet: 172.29.0.0/28
 volumes:
-    dbdata: 
-
+    dbdata:
