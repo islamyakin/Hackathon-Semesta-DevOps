@@ -9,7 +9,6 @@ services:
       - php
     volumes:
       - ./content:/var/www/html
-
     ports:
       - "80:80"
  # Konfigurasi untuk PHP
