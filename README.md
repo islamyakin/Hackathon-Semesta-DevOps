@@ -13,17 +13,9 @@ Nginx Version 1.23.0
 MySQL Version 8.0
 ````
 ## PHP VARIABLE
-![PHP VARIABEL](https://user-images.githubusercontent.com/73155834/175764243-6d0f244a-29e1-41a1-94fa-317e89fabac6.png)
-
-
-
-
-
-
-
-
-
-
+=![PHP TERBARU](https://user-images.githubusercontent.com/73155834/175764667-d5a5608a-dc68-41f6-8fb2-9955d47ec7cd.png)
+Lanjutan Variable
+![PHP-8-1-7-phpinfo-](https://user-images.githubusercontent.com/73155834/175764675-3d3253e0-35a4-4ae4-9191-3fd1fd8490e7.png)
 
 
 
