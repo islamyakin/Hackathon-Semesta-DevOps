@@ -1,45 +1,65 @@
-version: '2.3'
+version: '2.4'
 services:
- # Koonfigurasi untuk NGINX   
+ # Nginx server configuration   
   web:
-    build: ./nginx/
-    container_name: webserver_semesta
-    links:
-      - mysql
-      - php
+    build:
+      dockerfile: ./nginx/Dockerfile
+      context: "."
+    image: php-nginx
     volumes:
-      - ./content:/var/www/html
+      - ./:/app
+    container_name: webserver_semesta
+    networks:
+      semesta_network:
+        ipv4_address: 172.29.0.2
     ports:
       - "80:80"
- # Konfigurasi untuk PHP
+ # Php-fpm configuration
   php:
-    build: ./PHP/
+    build:
+      dockerfile: ./php/Dockerfile
+      context: "."
+    image: php-fpm
+    env_file:
+      - ./database/database.env
     container_name: php_semesta
+    networks:
+      semesta_network:
+        ipv4_address: 172.29.0.3  
     volumes:
-      - ./content:/var/www/html
-      - ./PHP:/usr/local/etc/php/php.ini
- # Konfigurasi untuk MySQL
+      - ./:/app
+ # Mysql configuration
   mysql:
-    image: mysql:latest
+    build: 
+      context: ./mysql
     container_name: mysql_semesta
     restart: always
-    environment:
-        - MYSQL_DATABASE=semesta
-        - MYSQL_ROOT_PASSWORD=islam
-        - MYSQL_USER=islam
-        - MYSQL_PASSWORD=islam321
+    env_file:
+        - ./database/database.env
+    networks:
+      semesta_network:
+        ipv4_address: 172.29.0.4       
     ports:
         - "3306:3306"
     volumes:
         - /dbdata:/var/lib/mysql
-  #Addtional phpMyAdmin
+  #PhpmyAdmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     restart: always
+    networks:
+      semesta_network:
+        ipv4_address: 172.29.0.5  
     ports:
         - "8090:80"
     links: 
         - mysql:db
+networks:
+    semesta_network:
+        ipam:
+            config:
+               - subnet: 172.29.0.0/28
 volumes:
-  dbdata:
+    dbdata:
+
