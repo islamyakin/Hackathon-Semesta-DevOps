@@ -2,14 +2,14 @@ version: '2.3'
 services:
  # Koonfigurasi untuk NGINX   
   web:
-    image: nginx:latest
+    build: ./nginx/
     container_name: webserver_semesta
     links:
       - mysql
       - php
     volumes:
       - ./content:/var/www/html
-      - ./nginx:/etc/nginx/conf.d/
+
     ports:
       - "80:80"
  # Konfigurasi untuk PHP
