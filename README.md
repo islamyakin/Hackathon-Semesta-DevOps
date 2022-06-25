@@ -4,6 +4,7 @@
 ### Sebuah Web Server menggunakan Nginx, PHP, dan MySQl di tambah dengan phpMyAdmin.
 ### Dibuat Di VPS dengan Linux Ubuntu 20.04
 ### Klik [Disini](http://www.islamyakin.live/) untuk Melihat Web.
+### Klik [Disini](http://www.islamyakin.live/info.php?) untuk Melihat InfoPHP.
 ```
 PHP version 8.1.7
 ```
