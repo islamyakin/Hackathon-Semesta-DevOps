@@ -1,6 +1,6 @@
 version: '2.3'
 services:
- # Nginx server configuration   
+ # Koonfigurasi untuk NGINX   
   web:
     image: nginx:latest
     container_name: webserver_semesta
@@ -12,14 +12,14 @@ services:
       - ./nginx:/etc/nginx/conf.d/
     ports:
       - "80:80"
- # Php-fpm configuration
+ # Konfigurasi untuk PHP
   php:
     image: php:8.1-fpm
     container_name: php_semesta
     volumes:
       - ./content:/var/www/html
       - ./php:/usr/local/etc/php/php.ini
- # Mysql configuration
+ # Konfigurasi untuk MySQL
   mysql:
     image: mysql:latest
     container_name: mysql_semesta
@@ -33,7 +33,7 @@ services:
         - "3306:3306"
     volumes:
         - /dbdata:/var/lib/mysql
-  #PhpmyAdmin
+  #Addtional phpMyAdmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
