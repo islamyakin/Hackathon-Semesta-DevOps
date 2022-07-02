@@ -1,6 +1,6 @@
 # Hackathon-Semesta-DevOps
 ## Nama : Islam Nurul Yakin
-## Mail : nurulyakin79@gmail.com
+## Mail : nurulyakin79@gmail.com 
 ### Sebuah Web Server menggunakan Nginx, PHP, dan MySQl di tambah dengan phpMyAdmin.
 ### Dibuat Di VPS dengan Linux Ubuntu 20.04
 ### Klik [Disini](http://www.islamyakin.live/) untuk Melihat Web.
